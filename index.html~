@@ -51,6 +51,7 @@
     </div>
 
     <div id="its" class="step" data-x="850" data-y="3000" data-rotate="90" data-scale="5">
+        <p id="test" onclick="javascript:zhedie(this)">openstack</p>
         <script  type="text/javascript">
             function zhedie(hand){
                 console.log(['click p',hand,hand.nextElementSibling.style.visibility]); 
@@ -62,7 +63,6 @@
                     hand.nextElementSibling.style.visibility='hidden'
                 }}
         </script>
-        <p id="test" onclick="javascript:zhedie(this)">openstack</p>
         <div><img src="http://socializedsoftware.com/wp-content/uploads/2010/07/WebMainScreen.jpg" width="778"/></div>
     </div>
 

@@ -51,24 +51,13 @@
     </div>
 
     <div id="its" class="step" data-x="850" data-y="3000" data-rotate="90" data-scale="5">
-        <script  type="text/javascript">
-            function zhedie(hand){
-                console.log(['click p',hand,hand.nextElementSibling.style.visibility]); 
-                if(hand.nextElementSibling.style.visibility=='hidden'){
-                    console.log(['is hide']);
-                    hand.nextElementSibling.style.visibility='visible'
-                }else{
-                    console.log(['is show'])
-                    hand.nextElementSibling.style.visibility='hidden'
-                }}
-        </script>
-        <p id="test" onclick="javascript:zhedie(this)">openstack</p>
-        <div><img src="http://socializedsoftware.com/wp-content/uploads/2010/07/WebMainScreen.jpg" width="778"/></div>
+        <p><strong>openstack</strong> <br/></p>
+        <img src="http://socializedsoftware.com/wp-content/uploads/2010/07/WebMainScreen.jpg" width="778"/>
     </div>
 
     <div id="big" class="step" data-x="3500" data-y="2100" data-rotate="180" data-scale="6">
         <div>
-            <!--<iframe width="778" height="600" style="background:#fff" src="http://www.baidu.com"></iframe>-->
+            <iframe width="778" src="http://www.google.com/trends/?q=libvirt,+openstack,+deltacloud,+libcloud,+opennebula,+Eucalyptus,Enomalism&ctab=0&geo=all&date=all&sort=0"></iframe>
         </div>
     </div>
 
