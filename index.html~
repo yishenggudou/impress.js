@@ -11,7 +11,7 @@
 
     <link href="css/impress-demo.css" rel="stylesheet" />
 </head>
-<body>
+<body style="background: rgba(131, 169, 13,0.5) url(images/qiyiLogo.png); background-repeat: no-repeat;background-position:2% 2%">
 
 <div id="impress" class="impress-not-supported">
 
@@ -21,26 +21,160 @@
     </div>
 
     <div id="bored" class="step slide" data-x="-1000" data-y="-1500">
-        <q>云计算技术</q>
+        <q>Html5&Node.js</q>
         <p>@timger</p>
     </div>
 
     <div class="step slide" data-x="0" data-y="-1500">
-        <q>云计算简介</q>
-        <p>云计算技术</P>
-        <p><a href="http://zh.wikipedia.org/wiki/%E9%9B%B2%E7%AB%AF%E9%81%8B%E7%AE%97"  target="_blank"><img width="778" src="http://commondatastorage.googleapis.com/haibo/temp/Screenshot-2012-01-31%2013%3A46%3A20.png"/></a></p>
+        <q>Html5简介</q>
+        <li>New Elements&New Attributes&Full CSS3 Support</li>
+        <li>Canvas</li>
+        <li>WebGL</li>
+        <li>WebSocket</li>
+        <li>Loaction Storage</li>
+        <li>Video&Audio</li>
+        <li>Local SQL Database</li>
+        <p>  个人觉得就是提供了更多的API用于web编程,与js结合使用可以实现功能和本地应用媲美的web app,比如google doc</p>
     </div>
-
-
-
     <div class="step slide" data-x="1000" data-y="-1500">
-        <p>国内云计算平台</p>
-        <span><img src="http://commondatastorage.googleapis.com/haibo/temp/Screenshot-2012-01-31%2014%3A00%3A03.png"/></span>
-        <span><img src="http://commondatastorage.googleapis.com/haibo/temp/Screenshot-2012-01-31%2014%3A01%3A08.png"/></span>
-        <span><img src="http://commondatastorage.googleapis.com/haibo/temp/Screenshot-2012-01-31%2014%3A02%3A02.png"/></span>
-        <q>Would you like to <strong>impress your audience</strong> with <strong>stunning visualization</strong> of your talk?</q>
+        <q>New Elements</q>
+        <li>&#60;article&#62; <small>标签定义外部的内容，可以是一篇新的文章</small></li>
+        <li>&#60;aside&#62; <small>标签定义 article 以外的内容，aside 的内容可用作文章的侧栏</small></li>
+        <li>&#60;figcaption&#62; <small>标签定义 figure 元素的标题</small></li>
+        <li>&#60;figure&#62; <small>标签用于对元素进行组合，使用 figcaption 元素为元素组添加标题</small></li>
+        <li>&#60;footer&#62; <small>标签定义 section 或 文档 的页脚</small></li>
+        <li>&#60;header&#62; <small>标签定义 文档 的页眉</small></li>
+        <li>&#60;hgroup&#62; <small>标签用于对 section 或 网页 的标题进行组合，使用 figcaption 元素为元素组添加标题</small></li>
+        <li>&#60;nav&#62;<small> 标签定义 导航链接 的部分</small></li>
+        <li>&#60;section&#62; <small>标签定义文档中的节（ section、区段 ）。比如章节、页眉、页脚或文档中的其他部分</small></li>
+        <li>&#60;time&#62;<small>标签定义日期或时间</small></li>
+        <p>  个人觉得就是提供了更多的API用于web编程,</p>
+        <p>与js结合使用可以实现功能和本地应用媲美的web app,比如google doc</p>
     </div>
 
+    <div class="step slide" data-x="2000" data-y="-1500">
+        <q>Canvas</q>
+        <li>绘制2D图形</li>
+        <li><button type="button" name="test_canvas" onclick="javascript:t_c()">点击测试</button></li>
+        <li><canvas id="t_c" width="600" height="150"></canvas></li>
+        <script type="text/javascript">
+            function t_c(){
+                var canvas = document.getElementById('t_c');  
+                var ctx = canvas.getContext('2d');
+                ctx.clearRect(0,0,1000,1000)
+                ctx.fillStyle = "rgb(200,0,0)";  
+                ctx.fillRect (10, 10, 55, 50);
+                ctx.fillStyle = "rgb(255,255,255)";  
+                ctx.fillRect (10, 10, 55, 50);
+                ctx.fillStyle = "red";  
+                var li = [  ['hi',[10,40]],
+                            ['我就是 canvas',[40,40]],
+                            ['我来自html5',[10,80]],
+                            ['注意：我不是image也不是html',[150,120]],
+                            ['用我写2D游戏很Easy',[260,70]],
+                            ];
+                li.reverse()
+                ctx.fillStyle = "blue";
+                ctx.font="24pt Helvetica";
+                setInterval(function(){
+                        var a = li[li.length-1];
+                        ctx.fillText(a[0],a[1][0],a[1][1]);
+                        li.pop();},800)
+                }
+        </script>
+        <p>此特性结合一些开源js 2D引擎[如:box2d,cocoa2d]可以编写2D游戏,</p>
+        <p>如<a href="http://chrome.angrybirds.com/" target="_blank">Angry Birds</a>
+    </div>
+    <div class="step slide" data-x="3000" data-y="-1500">
+        <q>WebGL</q>
+        <li>用于3D绘图</li>
+        <li>chrome中开启需要在地址栏中输入<code>chrome://flags/</code></li>
+        <li><img src="http://commondatastorage.googleapis.com/haibo/image/Screen%20Shot%202012-02-18%20at%209.40.47%20PM.png" /></li>
+        <li>See Demo on <a href="http://www.chromeexperiments.com/webgl" target="_blank">chromeexperiments</a></li>
+        <p></p>
+    </div>
+
+    <div class="step slide" data-x="4000" data-y="-1500">
+        <q>WebSocket</q>
+        <li>实现与服务器的长连接</li>
+        <li>不同于原声的Socket，浏览器对这种socket坐了很多限制</li>
+        <li>不能监听本地端口</li>
+    </div>
+    <div class="step slide" data-x="5000" data-y="-1500">
+        <q>Loaction Storage</q>
+        <li>提供本地存储接口,比cookie能存更多的数据</li>
+        <li>跟Cookie一样是根据域名识别数据的</li>
+        <li>tiger中的各种查里面的“保存本次查询“就是用的loaction storage</li>
+        <p>  个人觉得就是提供了更多的API用于web编程,与js结合使用可以实现功能和本地应用媲美的web app,比如google doc</p>
+    </div>
+    <div class="step slide" style="" data-x="6000" data-y="-1500">
+        <q>Video&Audio</q>
+        <li>视频和音频可以不借助插件来实现播放</li>
+        <li>音频支持MP3/Wav/Ogg各浏览器支持度不一样</li>
+        <li><audio controls="controls" autoplay="autoplay" class="impress-link">
+            <source src="http://v6.cache2.c.bigcache.googleapis.com/haibo/20110719015738635.mp3?redirect_counter=1" type="audio/mpeg" />
+              Your browser does not support the audio element.
+            </audio><small>&#60;-use audio tag click to play</small>
+        </li>
+        <li><pre style="font-size:12px;margin:0px 0px 0px 0px;padding:0px 0px 0px 0px">
+        &#60;audio controls="controls"&#62;&#60;source src="song.ogg" type="audio/ogg" /&#62;&#60;source src="song.mp3" type="audio/mpeg" /&#62;&#60;/audio&#62;
+        </pre></li>
+        <li>语音录入<input type="text" style="width:300px;height:36px" x-webkit-speech /></li>
+        <p>  个人觉得就是提供了更多的API用于web编程,与js结合使用可以实现功能和本地应用媲美的web app,比如google doc</p>
+    </div>
+    <div class="step slide" data-x="7000" data-y="-1500">
+        <q>Video</q>
+        <li>支持3种编码格式各浏览器支持的格式不一致<a href="http://www.w3schools.com/html5/html5_video.asp" target="_blank" class="impress-link"></a></li>
+        <li>MP4 = MPEG 4 files with H264 video codec and AAC audio codec</li>
+        <li>WebM = WebM files with VP8 video codec and Vorbis audio codec</li>
+        <li>Ogg = Ogg files with Theora video codec and Vorbis audio codec</li>
+    </div>
+    <div class="step slide" data-x="7000" data-y="-500">
+        <q>Html5视频格式关系</q>
+        <p><img src="https://chart.googleapis.com/chart?cht=gv&chl=digraph{video-%3Emp4_H264;video-%3Ewebbw_VP8;mp4_H264-%3EMPEGLA;video-%3Eogg_Theora;webbw_VP8-%3EOn2Technologies-%3Egoogle;MPEGLA-%3Eapple;MPEGLA-%3Emicrosoft;ogg_Theora-%3ETheora}&chs=600x360"/></p>
+        <p><small>阮一峰的<a href="http://www.ruanyifeng.com/blog/2010/05/html5_codec_fight.html">HTML5的视频格式之争</a>中有详细介绍</small></p>
+    </div>
+    <div class="step slide" data-x="6000" data-y="-500">
+        <q>Html5演示视频</q>
+  <p><button onclick="playPause()">Play/Pause</button> 
+  <button onclick="makeBig()">Big</button>
+  <button onclick="makeSmall()">Small</button>
+  <button onclick="makeNormal()">Norimal</button></p>
+        <video id="video1" >
+            <source src="http://v7.cache2.c.bigcache.googleapis.com/haibo/video/mov_bbb.mp4?redirect_counter=1" type="video/mp4" />
+             <source src="http://www.w3schools.com/html5/mov_bbb.ogg" type="video/ogg" />
+                    Your browser does not support HTML5 video.
+        </video>
+<script type="text/javascript"> 
+var myVideo=document.getElementById("video1"); 
+
+function playPause()
+{ 
+if (myVideo.paused) 
+  myVideo.play(); 
+else 
+  myVideo.pause(); 
+} 
+
+function makeBig()
+{ 
+myVideo.height=(myVideo.videoHeight*2); 
+} 
+
+function makeSmall()
+{ 
+myVideo.height=(myVideo.videoHeight/2); 
+} 
+
+function makeNormal()
+{ 
+myVideo.height=(myVideo.videoHeight); 
+} 
+</script> 
+ 
+        <p></p>
+    </div>
+<!--
     <div id="title" class="step" data-x="0" data-y="0" data-scale="4">
         <p>开源的云计算技术</p>
         <h2><a href="http://zh.wikipedia.org/wiki/OpenStack" target="_blank">openstack</a></h2>
@@ -49,44 +183,41 @@
         <h2><a href="http://open.eucalyptus.com/" target="_blank">Eucalyptus</a></h2>
         <h2><a href="http://www.cloud.com/" target="_blank">CloudStack</a></h2>
     </div>
-
+    -->
     <div id="its" class="step" data-x="850" data-y="3000" data-rotate="90" data-scale="5">
-        <p id="test" onclick="javascript:zhedie(this)">openstack</p>
-        <script  type="text/javascript">
-            function zhedie(hand){
-                console.log(['click p',hand,hand.nextElementSibling.style.visibility]); 
-                if(hand.nextElementSibling.style.visibility=='hidden'){
-                    console.log(['is hide']);
-                    hand.nextElementSibling.style.visibility='visible'
-                }else{
-                    console.log(['is show'])
-                    hand.nextElementSibling.style.visibility='hidden'
-                }}
-        </script>
-        <div><img src="http://socializedsoftware.com/wp-content/uploads/2010/07/WebMainScreen.jpg" width="778"/></div>
+        <q>Html5视频问题</q>
+        <li>HTML5无法实现DRM</li>
+        <li>HTML5不能播放直播视频</li>
+        <li>HTML5上不能与摄像头交互</li>
+        <li>HTML5上无法实现视频的全屏播放</li>
+        <p><small>以上观点摘录自<a href="http://blogs.msdn.com/b/thebeebs/archive/2011/12/04/five-things-you-can-t-do-with-html5-yet.aspx">msdn</a></small></p>
     </div>
 
     <div id="big" class="step" data-x="3500" data-y="2100" data-rotate="180" data-scale="6">
         <div>
-            <!--<iframe width="778" height="600" style="background:#fff" src="http://www.baidu.com"></iframe>-->
+            <p>Thank you</p>
         </div>
     </div>
 
     <div id="tiny" class="step" data-x="2825" data-y="2325" data-z="-3000" data-rotate="300" data-scale="1">
-        <p>and <b>tiny</b> ideas</p>
+        <p>power by</p>
+        <p><b><a href="http://bartaz.github.com/impress.js/#/bored">impress.js</a>and<a href="http://github.com">github</a></b></p>
+        <p>chart by<b><a href="http://code.google.com/apis/chart/image/docs/gallery/graphviz.html">google image chart api</a></b></p>
+        <p>theme by<a href="http://weibo.com/zhanghaibo">@timger</a></p>
     </div>
 
     <div id="ing" class="step" data-x="3500" data-y="-850" data-rotate="270" data-scale="6">
-        <p>by <b class="positioning">positioning</b>, <b class="rotating">rotating</b> and <b class="scaling">scaling</b> them on an infinite canvas</p>
+        <!--<p style="z-index:-1;display:none">by <b class="positioning">positioning</b>, <b class="rotating">rotating</b> and <b class="scaling">scaling</b> them on an infinite canvas</p>-->
     </div>
 
     <div id="imagination" class="step" data-x="6700" data-y="-300" data-scale="6">
-        <p>the only <b>limit</b> is your <b class="imagination">imagination</b></p>
+        <p>this ppt‘s Source on <b><a href="https://github.com/yishenggudou/impress.js">Git</a></b></p>
     </div>
 
     <div id="source" class="step" data-x="6300" data-y="2000" data-rotate="20" data-scale="4">
-        <p>want to know more?</p>
+        <!--<p>want to know more?</p>
         <q><a href="http://github.com/bartaz/impress.js">use the source</a>, Luke!</q>
+        -->
     </div>
 
     <div id="one-more-thing" class="step" data-x="6000" data-y="4000" data-scale="2">
@@ -104,7 +235,8 @@
 </div>
 
 <div class="hint">
-    <p>Use a spacebar or arrow keys to navigate</p>
+    <!--<p>Use a spacebar or arrow keys to navigate</p>-->
+    <p>按空格或者方向键播放</p>
 </div>
 
 <script src="js/impress.js"></script>
