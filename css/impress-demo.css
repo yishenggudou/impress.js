@@ -467,7 +467,9 @@ a:hover {
 .slide q strong {
     white-space: nowrap;
 }
-
+.slide p{
+padding:0px 0px 0px 30px
+}
 
 /* IMPRESS NOT SUPPORTED STYLES */
 

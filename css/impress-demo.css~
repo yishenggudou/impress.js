@@ -315,9 +315,10 @@ a:hover {
     padding-bottom: 300px;
     
     /* Yoda Icon :: Pixel Art from Star Wars http://www.pixeljoint.com/pixelart/1423.htm */
-    background-image: url( images/bg.png)
+    background: url( images/bg.png)
     background-position: bottom right;
     background-repeat: no-repeat;
+    background-size:100% 100%;
 }
 
 #source q {
@@ -466,7 +467,9 @@ a:hover {
 .slide q strong {
     white-space: nowrap;
 }
-
+.slide p{
+padding:0px 0px 0px 12px
+}
 
 /* IMPRESS NOT SUPPORTED STYLES */
 

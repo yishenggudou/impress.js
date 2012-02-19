@@ -34,142 +34,102 @@
         <li>Flash</li>
     </div>
     <div class="step slide" data-x="1000" data-y="-1500">
-        <q>New Elements</q>
-        <li>&#60;article&#62; <small>标签定义外部的内容，可以是一篇新的文章</small></li>
-        <li>&#60;aside&#62; <small>标签定义 article 以外的内容，aside 的内容可用作文章的侧栏</small></li>
-        <li>&#60;figcaption&#62; <small>标签定义 figure 元素的标题</small></li>
-        <li>&#60;figure&#62; <small>标签用于对元素进行组合，使用 figcaption 元素为元素组添加标题</small></li>
-        <li>&#60;footer&#62; <small>标签定义 section 或 文档 的页脚</small></li>
-        <li>&#60;header&#62; <small>标签定义 文档 的页眉</small></li>
-        <li>&#60;hgroup&#62; <small>标签用于对 section 或 网页 的标题进行组合，使用 figcaption 元素为元素组添加标题</small></li>
-        <li>&#60;nav&#62;<small> 标签定义 导航链接 的部分</small></li>
-        <li>&#60;section&#62; <small>标签定义文档中的节（ section、区段 ）。比如章节、页眉、页脚或文档中的其他部分</small></li>
-        <li>&#60;time&#62;<small>标签定义日期或时间</small></li>
-        <p>  个人觉得就是提供了更多的API用于web编程,</p>
-        <p>与js结合使用可以实现功能和本地应用媲美的web app,比如google doc</p>
+        <q><del>Web Socket</del></q>
+        <li>是为了实现｀即时通讯｀替代`轮训`和`Comet`技术出现的<small>更多参见<a href="http://zh.wikipedia.org/zh-cn/WebSocket" target="_blank">wiki</a>和<a href="http://dev.w3.org/html5/websockets/" target="_blank">W3C</a></small></li>
+        <li>其API只有<b>CONNECTING</b>,<b>OPEN</b>,<b>CLOSING</b>,<b>CLOSED</b>方法,不能LISTEN本地端口</li>
+        <li>可以和一个websocket server建立长连接，但是不能和其他浏览器建立连接</li>
     </div>
 
     <div class="step slide" data-x="2000" data-y="-1500">
-        <q>Canvas</q>
-        <li>绘制2D图形</li>
-        <li><button type="button" name="test_canvas" onclick="javascript:t_c()">点击测试</button></li>
-        <li><canvas id="t_c" width="600" height="150"></canvas></li>
-        <script type="text/javascript">
-            function t_c(){
-                var canvas = document.getElementById('t_c');  
-                var ctx = canvas.getContext('2d');
-                ctx.clearRect(0,0,1000,1000)
-                ctx.fillStyle = "rgb(200,0,0)";  
-                ctx.fillRect (10, 10, 55, 50);
-                ctx.fillStyle = "rgb(255,255,255)";  
-                ctx.fillRect (10, 10, 55, 50);
-                ctx.fillStyle = "red";  
-                var li = [  ['hi',[10,40]],
-                            ['我就是 canvas',[40,40]],
-                            ['我来自html5',[10,80]],
-                            ['注意：我不是image也不是html',[150,120]],
-                            ['用我写2D游戏很Easy',[260,70]],
-                            ];
-                li.reverse()
-                ctx.fillStyle = "blue";
-                ctx.font="24pt Helvetica";
-                setInterval(function(){
-                        var a = li[li.length-1];
-                        ctx.fillText(a[0],a[1][0],a[1][1]);
-                        li.pop();},800)
-                }
-        </script>
-        <p>此特性结合一些开源js 2D引擎[如:box2d,cocoa2d]可以编写2D游戏,</p>
-        <p>如<a href="http://chrome.angrybirds.com/" target="_blank">Angry Birds</a>
+        <q><del>Web Socket</q>
+        <img src="images/websocket.png"/>
     </div>
     <div class="step slide" data-x="3000" data-y="-1500">
-        <q>WebGL</q>
-        <li>用于3D绘图</li>
-        <li>chrome中开启需要在地址栏中输入<code>chrome://flags/</code></li>
-        <li><img src="http://commondatastorage.googleapis.com/haibo/image/Screen%20Shot%202012-02-18%20at%209.40.47%20PM.png" /></li>
-        <li>See Demo on <a href="http://www.chromeexperiments.com/webgl" target="_blank">chromeexperiments</a></li>
+        <q>P2P API</q>
+        <li>11年3月左右的Chromium开放有此API</li>
+        <li><img src="images/p2papi.png"/></li>
+        <li>貌似基于Native Client</li>
+        <li>看开发日志上说已经不再支持</li>
+        <li>参见 <a href="http://code.google.com/p/chromium/issues/detail?id=41776&q=P2P%20API&colspec=ID%20Pri%20Mstone%20ReleaseBlock%20Area%20Feature%20Status%20Owner%20Summary" target="_blank">P2P API</a>
+        <a href="https://developers.google.com/native-client/sdk/release-notes" target="_blank">Native Client</a>
+        </li>
+        <li>开发日志中Jan 9, 2012号说移到WebRTC</li>
         <p></p>
     </div>
 
     <div class="step slide" data-x="4000" data-y="-1500">
-        <q>WebSocket</q>
-        <li>实现与服务器的长连接</li>
-        <li>不同于原声的Socket，浏览器对这种socket坐了很多限制</li>
-        <li>不能监听本地端口</li>
+        <q>WebRTC-<small>Real-time Communication Between Browsers</small></q>
+        <li>属于W3C里面的标准见<a href="http://www.w3.org/TR/webrtc/" target="_blank">W3CRTC</a></li>
+        <li>此技术进化自VoIP，之前的网络电话,用于视频会议和p2p通信部分,如:skype</li>
+        <li>包含了使用STUN、ICE、TURN、RTP-over-TCP的关键NAT和防火墙穿越技术，并支持代理</li>
+        <li>开源，主要推动者是Google,</li>
+        <li>Google Chrome 18+ 中支持该功能</li>
     </div>
     <div class="step slide" data-x="5000" data-y="-1500">
-        <q>Loaction Storage</q>
-        <li>提供本地存储接口,比cookie能存更多的数据</li>
-        <li>跟Cookie一样是根据域名识别数据的</li>
-        <li>tiger中的各种查里面的“保存本次查询“就是用的loaction storage</li>
+        <q>WebRtc 架构图</q>
+        <img src="images/WebRTC.jpg" />
         <p>  个人觉得就是提供了更多的API用于web编程,与js结合使用可以实现功能和本地应用媲美的web app,比如google doc</p>
     </div>
     <div class="step slide" style="" data-x="6000" data-y="-1500">
-        <q>Video&Audio</q>
-        <li>视频和音频可以不借助插件来实现播放</li>
-        <li>音频支持MP3/Wav/Ogg各浏览器支持度不一样</li>
-        <li><audio controls="controls" autoplay="autoplay" class="impress-link">
-            <source src="http://v6.cache2.c.bigcache.googleapis.com/haibo/20110719015738635.mp3?redirect_counter=1" type="audio/mpeg" />
-              Your browser does not support the audio element.
-            </audio><small>&#60;-use audio tag click to play</small>
-        </li>
-        <li><pre style="font-size:12px;margin:0px 0px 0px 0px;padding:0px 0px 0px 0px">
-        &#60;audio controls="controls"&#62;&#60;source src="song.ogg" type="audio/ogg" /&#62;&#60;source src="song.mp3" type="audio/mpeg" /&#62;&#60;/audio&#62;
-        </pre></li>
-        <li>语音录入<input type="text" style="width:300px;height:36px" x-webkit-speech /></li>
-        <p>  个人觉得就是提供了更多的API用于web编程,与js结合使用可以实现功能和本地应用媲美的web app,比如google doc</p>
+        <q>WebRTC - Peer to Peer</q>
+        <li>Api 接口部分由W3C定义:参见<a href="http://www.w3.org/TR/webrtc/#peer-to-peer-connections" target="_blank">peer-to-peer</a></li>
+        <li>代码编写各浏览器可能不一样，google有开源此部分技术</li>
+        <li> javascript 调用接口完成peer to peer 连接[new PeerConnection()]</li>
+        <p>此API还是草案，到所有浏览器都支持还需要一段时间</p>
     </div>
     <div class="step slide" data-x="7000" data-y="-1500">
-        <q>Video</q>
-        <li>支持3种编码格式各浏览器支持的格式不一致<a href="http://www.w3schools.com/html5/html5_video.asp" target="_blank" class="impress-link"></a></li>
-        <li>MP4 = MPEG 4 files with H264 video codec and AAC audio codec</li>
-        <li>WebM = WebM files with VP8 video codec and Vorbis audio codec</li>
-        <li>Ogg = Ogg files with Theora video codec and Vorbis audio codec</li>
+        <q>WebRTC - PeerConnection</q>
+        <li>参见<a href="http://www.webrtc.org/reference/api-description" target="_blank">WebRTC</a></li>
+        <li>Start a call<img src="images/PeerConnectionStartCall.png" height="400" width=""/></li>
     </div>
     <div class="step slide" data-x="7000" data-y="-500">
-        <q>Html5视频格式关系</q>
-        <p><img src="https://chart.googleapis.com/chart?cht=gv&chl=digraph{video-%3Emp4_H264;video-%3Ewebbw_VP8;mp4_H264-%3EMPEGLA;video-%3Eogg_Theora;webbw_VP8-%3EOn2Technologies-%3Egoogle;MPEGLA-%3Eapple;MPEGLA-%3Emicrosoft;ogg_Theora-%3ETheora;Theora->OpenSource}&chs=600x360"/></p>
-        <p><small>阮一峰的<a href="http://www.ruanyifeng.com/blog/2010/05/html5_codec_fight.html">HTML5的视频格式之争</a>中有详细介绍</small></p>
+     <q>Disconnect a call</q>
+     <img src="images/PeerConnectionDisconnectCall.png"/>
     </div>
     <div class="step slide" data-x="6000" data-y="-500">
-        <q>Html5演示视频</q>
-  <p><button onclick="playPause()">Play/Pause</button> 
-  <button onclick="makeBig()">Big</button>
-  <button onclick="makeSmall()">Small</button>
-  <button onclick="makeNormal()">Norimal</button></p>
-        <video id="video1" >
-            <source src="http://v7.cache2.c.bigcache.googleapis.com/haibo/video/mov_bbb.mp4?redirect_counter=1" type="video/mp4" />
-             <source src="http://www.w3schools.com/html5/mov_bbb.ogg" type="video/ogg" />
-                    Your browser does not support HTML5 video.
-        </video>
-<script type="text/javascript"> 
-var myVideo=document.getElementById("video1"); 
-
-function playPause()
-{ 
-if (myVideo.paused) 
-  myVideo.play(); 
-else 
-  myVideo.pause(); 
-} 
-
-function makeBig()
-{ 
-myVideo.height=(myVideo.videoHeight*2); 
-} 
-
-function makeSmall()
-{ 
-myVideo.height=(myVideo.videoHeight/2); 
-} 
-
-function makeNormal()
-{ 
-myVideo.height=(myVideo.videoHeight); 
-} 
-</script> 
- 
-        <p></p>
+        <q>Receive a call from the remote peer</q>
+        <img src="images/PeerConnectionRemotePeerDisconnect.png" />
+    </div>
+    <div class="step slide" data-x="5000" data-y="-500">
+        <q>Remote Peer initiates the disconnection </q>
+        <img src="images/PeerConnectionRemotePeerDisconnect.png" />
+    </div>
+    <div class="step slide" data-x="4000" data-y="-500">
+        <q>API Description </q>
+        <li>参见: <a href="http://www.webrtc.org/reference/api-description" target="_blank">WebRTC API Description</a></li>
+    </div>
+    <div class="step slide" data-x="3000" data-y="-500">
+        <q><a href="http://nodejs.org/" target="_blank">Node.js</a></q>
+        <li>V8 引擎</li>
+        <li>异步非阻塞</li>
+        <li>事件驱动</li>
+        <p>09年2月第一个版本</p>
+    </div>
+    <div class="step slide" data-x="2000" data-y="-500">
+        <q>V8</q>
+        <li>V8速度是PYTHON的<span style="color:red">8</span>倍(Python是Ruby的三倍左右)</li>
+        <li>具体参见<a href="http://shootout.alioth.debian.org/u32/benchmark.php?test=all&lang=v8&lang2=gnat" target="_blank">shootout</a>上的测试比较</li>
+        <li>V8除在chrome之外，在服务器端也有很多应用如<img src="http://media.mongodb.org/logo-mongodb.png" /><img src="http://nodejs.org/logo.png"/>
+    </div>
+    <div class="step slide" data-x="1000" data-y="-500">
+        <q>异步非阻塞</q>
+        <p><a href="http://oddments.org/scalestack-vs-node-vs-twisted-vs-eventlet" target="_blank">Scale Stack vs node.js vs Twisted vs Eventlet</a></p>
+        <img src="http://oddments.org/images/event_timing.png"/>   
+        <p style="font-size:24px">上面的测试是openstack的开发者考虑将openstack的Nova从Tornado迁移到Twisted或者Eventlet时候做的测试</p> 
+    </div>
+    <div class="step slide" data-x="1000" data-y="500">
+        <q>其他</q>
+        <li>支持多种协议HTTP、DNS、NET、UDP、HTTPS、TLS</li>
+        <li>单进程、单线程模式运行</li>
+        <li>可快速创建服务器端</li>
+        <li>Web App前后端统一</li>
+    </div>
+    <div class="step slide" data-x="2000" data-y="500">
+    <q>应用案例</q>
+    <li><img src="images/ebay.jpeg"/></li>
+    <li><img src="images/taobao.gif"/></li>
+    <li><img src="images/linlike.png"/></li>
+    <li><img src="images/azure.png"/></li>
     </div>
 <!--
     <div id="title" class="step" data-x="0" data-y="0" data-scale="4">
@@ -182,12 +142,8 @@ myVideo.height=(myVideo.videoHeight);
     </div>
     -->
     <div id="its" class="step" data-x="850" data-y="3000" data-rotate="90" data-scale="5">
-        <q>Html5视频问题</q>
-        <li>HTML5无法实现DRM</li>
-        <li>HTML5不能播放直播视频</li>
-        <li>HTML5上不能与摄像头交互</li>
-        <li>HTML5上无法实现视频的全屏播放</li>
-        <p><small>以上观点摘录自<a href="http://blogs.msdn.com/b/thebeebs/archive/2011/12/04/five-things-you-can-t-do-with-html5-yet.aspx">msdn</a></small></p>
+        <q>Remote Peer initiates the disconnection </q>
+        <img src="images/PeerConnectionRemotePeerDisconnect.png" />
     </div>
 
     <div id="big" class="step" data-x="3500" data-y="2100" data-rotate="180" data-scale="6">
