@@ -103,10 +103,13 @@
         <li>V8 引擎</li>
         <li>异步非阻塞</li>
         <li>事件驱动</li>
-        <p>09年2月第一个版本</p>
+        <p>09年2月第一个版本,发展迅速,现在有7k+个库,<br/>Github上watch人数超Rails</p>
+        <img src="images/node.png"/>
+        <img src="images/rails.png"/>
     </div>
     <div class="step slide" data-x="2000" data-y="-500">
         <q>V8</q>
+        <li>V8是google开源的javascript解释器</li>
         <li>V8速度是PYTHON的<span style="color:red">8</span>倍(Python是Ruby的三倍左右)</li>
         <li>具体参见<a href="http://shootout.alioth.debian.org/u32/benchmark.php?test=all&lang=v8&lang2=gnat" target="_blank">shootout</a>上的测试比较</li>
         <li>V8除在chrome之外，在服务器端也有很多应用如<img src="http://media.mongodb.org/logo-mongodb.png" /><img src="http://nodejs.org/logo.png"/>
